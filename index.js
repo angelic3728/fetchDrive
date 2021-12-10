@@ -16,6 +16,9 @@ app.get('/', function(req, res) {
     (err, resp) => {
       if (err) {
         console.log(err);
+        res.render('home', {
+           file_list:[] 
+        });
         return;
       }
       const fileList = resp.fileList.flatMap(({ files }) => files);
@@ -27,4 +30,3 @@ app.get('/', function(req, res) {
 });
 
 app.listen(process.env.PORT || 5000);
-console.log('Server is listening on port 8080');
