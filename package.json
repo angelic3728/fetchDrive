@@ -1,0 +1,17 @@
+{
+  "name": "fetchdrivedata",
+  "version": "1.0.0",
+  "description": "fetching photos from google drive",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "npngDev",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "google-drive-getfilelist": "^1.0.5",
+    "googleapis": "^92.0.0"
+  }
+}
