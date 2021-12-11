@@ -78,13 +78,13 @@
       }
     </style>
   </head>
-  <body>
-    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+  <body style="margin: 0px; height: 100vh; display:flex;">
+    <div style="width: 100%; height: 100%; padding: 10px; display: flex; justify-content: center; align-items: center;">
         <!-- Slideshow container -->
         <div class="slideshow-container" id="slideshow_container">
           <% file_list.forEach(function(file) { %>
               <div class='mySlides fade'>
-                <img src='https://drive.google.com/uc?export=view&id=<%= file.id %>' style='max-width:500px;max-height:500px;'>
+                <img src='https://drive.google.com/uc?export=view&id=<%= file.id %>' style='max-height: 100%; max-width: 100%;'>
               </div>
           <% }); %>
           <!-- Next and previous buttons -->
