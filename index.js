@@ -22,7 +22,7 @@ app.get('/', function(req, res) {
         return;
       }
       const fileList = resp.fileList.flatMap(({ files }) => files);
-      res.render('home', {
+      res.render('home2', {
          file_list:fileList 
       });
     }
