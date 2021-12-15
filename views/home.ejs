@@ -84,7 +84,7 @@
         <div class="slideshow-container" id="slideshow_container">
           <% file_list.forEach(function(file) { %>
               <div class='mySlides fade'>
-                <img src='https://drive.google.com/uc?export=view&id=<%= file.id %>' style='max-height: 96vh; max-width: 98vh;'>
+                <img src='https://drive.google.com/uc?export=view&id=<%= file.id %>' style='min-height: 96vh; min-width: 98vh; max-width: 100%; max-height: 100%;'>
               </div>
           <% }); %>
           <!-- Next and previous buttons -->
