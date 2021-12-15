@@ -16,13 +16,13 @@ app.get('/', function(req, res) {
     (err, resp) => {
       if (err) {
         console.log(err);
-        res.render('home2', {
+        res.render('home', {
            file_list:[] 
         });
         return;
       }
       const fileList = resp.fileList.flatMap(({ files }) => files);
-      res.render('home2', {
+      res.render('home', {
          file_list:fileList 
       });
     }
