@@ -84,7 +84,7 @@
         <div class="slideshow-container" id="slideshow_container">
           <% file_list.forEach(function(file) { %>
               <div class='mySlides fade'>
-                <img src='https://drive.google.com/uc?export=view&id=<%= file.id %>' style='min-height: 96vh; min-width: 98vh; max-width: 100%; max-height: 100%;'>
+                <img src='https://drive.google.com/uc?export=view&id=<%= file.id %>' onload="setImgStyle(this)">
               </div>
           <% }); %>
           <!-- Next and previous buttons -->
@@ -120,8 +120,18 @@
         }
         slides[slideIndex-1].style.display = "block";
       }
-
       showSlides(slideIndex);
+
+      function setImgStyle(obj) {
+        if(obj.width > obj.height) {
+          obj.style.minWidth = '96vh';
+          obj.style.maxWidth = '98vh'
+        }
+        else {
+          obj.style.minHeight = '96vh'
+          obj.style.maxHeight = '98vh'
+        }
+      }
     </script>
   </body>
 </html>

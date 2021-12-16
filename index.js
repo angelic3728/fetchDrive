@@ -15,7 +15,6 @@ app.get('/', function(req, res) {
     },
     (err, resp) => {
       if (err) {
-        console.log(err);
         res.render('home', {
            file_list:[] 
         });
