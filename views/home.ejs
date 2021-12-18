@@ -125,9 +125,11 @@
       function setImgStyle(obj) {
         if(obj.width > obj.height) {
           obj.style.width = '100%';
+          obj.style.maxHeight = '98vh';
         }
         else {
           obj.style.height = '98%'
+          obj.style.maxWidth = '100vh'
         }
       }
     </script>
