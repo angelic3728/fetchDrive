@@ -31,6 +31,7 @@
         transition: 0.6s ease;
         border-radius: 0 3px 3px 0;
         user-select: none;
+        display: none;
       }
 
       /* Position the "next button" to the right */
@@ -82,9 +83,9 @@
     <div style="width: 100%; height: 100%; padding: 10px; display: flex; justify-content: center; align-items: center;">
         <!-- Slideshow container -->
         <div class="slideshow-container" id="slideshow_container">
-          <% file_list.forEach(function(file) { %>
+          <% file_list.forEach(function(file, index) { %>
               <div class='mySlides fade'>
-                <img src='https://drive.google.com/uc?export=view&id=<%= file.id %>' onload="setImgStyle(this)">
+                <img src='https://drive.google.com/uc?export=view&id=<%= file.id %>' onload="setImgStyle(this, <%= index %>)">
               </div>
           <% }); %>
           <!-- Next and previous buttons -->
@@ -118,11 +119,12 @@
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
-        slides[slideIndex-1].style.display = "block";
+        if(slides.length>0)
+          slides[slideIndex-1].style.display = "block";
       }
       showSlides(slideIndex);
 
-      function setImgStyle(obj) {
+      function setImgStyle(obj, index) {
         if(obj.width > obj.height) {
           obj.style.width = '100%';
           obj.style.maxHeight = '98vh';
@@ -130,6 +132,11 @@
         else {
           obj.style.height = '98%'
           obj.style.maxWidth = '100vh'
+        }
+        console.log(index);
+        if(index>0) {
+          document.getElementById('prev').style.display = 'block';
+          document.getElementById('next').style.display = 'block';
         }
       }
     </script>
